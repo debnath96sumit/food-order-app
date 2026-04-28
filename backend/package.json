@@ -1,0 +1,49 @@
+{
+  "name": "food-order-app-backend",
+  "version": "1.0.0",
+  "description": "Food Order App - Backend API",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "test": "jest --runInBand",
+    "seed:menu": "ts-node-dev --transpile-only src/seed/menu.seed.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "socket.io": "^4.8.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "@types/supertest": "^7.2.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@types/uuid": "^10.0.0",
+    "jest": "^30.3.0",
+    "mongodb-memory-server": "^11.0.1",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.9",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ],
+    "globalSetup": "<rootDir>/src/tests/jest.setup.ts",
+    "globalTeardown": "<rootDir>/src/tests/jest.teardown.ts"
+  }
+}
