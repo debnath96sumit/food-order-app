@@ -35,10 +35,10 @@ const OrderStatusStepper = ({ currentStatus }: Props) => {
                             <div className="flex flex-col items-center">
                                 <div
                                     className={`w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 transition-colors ${isCompleted
-                                            ? "bg-orange-500"
-                                            : isActive
-                                                ? "bg-orange-500 ring-4 ring-orange-500/30"
-                                                : "bg-gray-800"
+                                        ? "bg-orange-500"
+                                        : isActive
+                                            ? "bg-orange-500 ring-4 ring-orange-500/30"
+                                            : "bg-gray-800"
                                         }`}
                                 >
                                     {ICONS[step]}
@@ -55,16 +55,19 @@ const OrderStatusStepper = ({ currentStatus }: Props) => {
                             <div className="pb-10 last:pb-0 pt-2">
                                 <p
                                     className={`text-sm font-medium transition-colors ${isActive
-                                            ? "text-orange-400"
-                                            : isCompleted
-                                                ? "text-white"
-                                                : "text-gray-600"
+                                        ? "text-orange-400"
+                                        : isCompleted
+                                            ? "text-white"
+                                            : "text-gray-600"
                                         }`}
                                 >
                                     {step}
                                 </p>
-                                {isActive && (
+                                {isActive && step !== "Delivered" && (
                                     <p className="text-xs text-gray-500 mt-0.5">In progress...</p>
+                                )}
+                                {isActive && step === "Delivered" && (
+                                    <p className="text-xs text-green-400 mt-0.5">✓ Order delivered!</p>
                                 )}
                                 {isCompleted && (
                                     <p className="text-xs text-gray-500 mt-0.5">Done</p>
