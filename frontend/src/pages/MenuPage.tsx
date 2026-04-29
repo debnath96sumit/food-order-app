@@ -4,7 +4,7 @@ import type { MenuItem } from "../types";
 import MenuItemCard from "../components/MenuItemCard";
 import Cart from "../components/Cart";
 
-const CATEGORIES = ["All", "Pizza", "Burger", "Drinks", "Desserts"];
+const CATEGORIES = ["All", "Pizza", "Burgers", "Drinks", "Desserts", "Pasta", "Salads", "Sides"];
 
 const MenuPage = () => {
     const [items, setItems] = useState<MenuItem[]>([]);
