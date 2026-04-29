@@ -135,7 +135,7 @@ const menuItems = [
         description:
             "Toasted sourdough slices brushed with herb-infused garlic butter, served warm.",
         price: 3.49,
-        image: "https://images.unsplash.com/photo-1619531038896-c6338d4e3f63?w=400",
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400",
         category: "Sides",
         isAvailable: true,
     },

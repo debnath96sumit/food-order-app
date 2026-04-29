@@ -22,7 +22,7 @@ const CheckoutPage = () => {
     ) => {
         const { name, value } = e.target;
         setForm((prev) => ({ ...prev, [name]: value }));
-        // Clear field error as user types
+
         if (fieldErrors[name as keyof CheckoutFormData]) {
             setFieldErrors((prev) => ({ ...prev, [name]: "" }));
         }
@@ -63,7 +63,6 @@ const CheckoutPage = () => {
             toast.success("Order placed successfully!");
             navigate(`/order/${order._id}`);
         } catch (err: any) {
-            // Backend validation errors — show each as a separate toast
             if (err.errors && Array.isArray(err.errors)) {
                 err.errors.forEach(({ message }: { message: string }) => {
                     toast.error(message);
@@ -99,7 +98,6 @@ const CheckoutPage = () => {
             </header>
 
             <div className="max-w-4xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-                {/* Delivery Form */}
                 <div>
                     <h2 className="text-xl font-semibold mb-6">Delivery Details</h2>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
